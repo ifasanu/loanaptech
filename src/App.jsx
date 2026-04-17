@@ -1,14 +1,24 @@
 import React from 'react';
-import About from './components/About'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import About from './components/About';
+import Footer from './components/Footer';
+import Contact from './components/Contact';
+import Faq from './components/Faq';
+import Terms from './components/Terms';
 
 export default function App() {
   return (
-    <div>
-      <About/>
+    <Router>
+    <div className='App'>
+      <Routes>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/faq" element={<Faq/>}/>
+        <Route path="terms" element={<Terms/>}/>
+      </Routes>
+
       <Footer/>
     </div>
-
+    </Router>  
   );
 }
-
